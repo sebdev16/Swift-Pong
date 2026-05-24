@@ -560,7 +560,7 @@ struct ContentView: View {
         }
     }
 
-    // MARK: - Sistema modo solitario
+    // Sistema modo solitario
 
     func updateSystemPaddle(size: CGSize) {
 
@@ -576,7 +576,7 @@ struct ContentView: View {
         )
     }
 
-    // MARK: - Navegación del juego
+    // Navegación del juego
 
     func startGame(screen: Screen) {
 
@@ -598,7 +598,7 @@ struct ContentView: View {
         rightScore = 0
     }
 
-    // MARK: - Iniciar ronda
+    // Iniciar ronda
 
     func startRound() {
 
@@ -609,7 +609,7 @@ struct ContentView: View {
         }
     }
 
-    // MARK: - Reiniciar pelota
+    // Reiniciar pelota
 
     func resetBall(size: CGSize) {
 
@@ -621,7 +621,7 @@ struct ContentView: View {
         ballVelocity.height *= -1
     }
 
-    // MARK: - Sonidos
+    // Sonidos
 
     func playSound(name: String) {
 
@@ -637,7 +637,7 @@ struct ContentView: View {
         }
     }
 
-    // MARK: - Música
+    // Música
 
     func playMusic() {
 
