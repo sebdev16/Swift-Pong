@@ -10,13 +10,15 @@ import AVFoundation
 
 struct ContentView: View {
 
+    // menu de juego
     enum Screen {
         case menu
         case solo
         case oneVsOne
         case history
     }
-
+    
+    //variables de historial
     struct MatchRecord: Identifiable, Codable {
         let id: UUID
         let mode: String
@@ -24,6 +26,8 @@ struct ContentView: View {
         let rightScore: Int
         let date: Date
     }
+    
+    // declaraciones de graficos ⬇️
 
     // Pantalla
 
@@ -48,6 +52,8 @@ struct ContentView: View {
     // Juego
 
     @State private var gameStarted = false
+    
+    // media
 
     // Audio
 
@@ -61,7 +67,8 @@ struct ContentView: View {
     let ballSize: CGFloat = 25
     let paddleEdgeInset: CGFloat = 90
     let matchHistoryKey = "matchHistory"
-
+    
+    //vista de los objetos
     var body: some View {
 
         GeometryReader { geometry in
@@ -199,7 +206,10 @@ struct ContentView: View {
             }
         }
     }
-
+    
+    // logica del juego
+    
+    //menu
     var mainMenu: some View {
 
         VStack(spacing: 18) {
@@ -253,7 +263,8 @@ struct ContentView: View {
             .shadow(color: .purple.opacity(0.8), radius: 12)
         }
     }
-
+    
+    // area de juego (modo contra IA)
     var soloOverlay: some View {
 
         ZStack {
@@ -343,7 +354,8 @@ struct ContentView: View {
             }
         }
     }
-
+    
+    // area de juego (modo 1 contra 1)
     var oneVsOneOverlay: some View {
 
         ZStack {
@@ -418,6 +430,7 @@ struct ContentView: View {
         }
     }
 
+    // historial
     var historyMenu: some View {
 
         VStack(spacing: 20) {
@@ -637,7 +650,7 @@ struct ContentView: View {
         }
     }
 
-    // Música
+    // Música de fondo
 
     func playMusic() {
 
@@ -655,7 +668,7 @@ struct ContentView: View {
         }
     }
 
-    // MARK: - Historial
+    // Historial
 
     func saveCurrentMatch() {
 
@@ -697,6 +710,7 @@ struct ContentView: View {
         }
     }
 
+    // fecha 
     func formatDate(_ date: Date) -> String {
 
         let formatter = DateFormatter()
