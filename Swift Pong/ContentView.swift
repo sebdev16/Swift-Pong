@@ -109,7 +109,7 @@ struct ContentView: View {
                         lineWidth: 2
                     )
 
-                    // Barra superior
+                    // juagor azul
                     let leftRect = CGRect(
                         x: leftPaddleX - paddleWidth / 2,
                         y: paddleEdgeInset,
@@ -127,7 +127,7 @@ struct ContentView: View {
                     context.fill(leftPath, with: .color(Color(red: 0.0, green: 0.75, blue: 1.0)))
                     context.stroke(leftPath, with: .color(.white.opacity(0.85)), lineWidth: 1.5)
 
-                    // Barra inferior
+                    // jugador rojo
                     let rightRect = CGRect(
                         x: rightPaddleX - paddleWidth / 2,
                         y: size.height - paddleEdgeInset - paddleHeight,
@@ -165,6 +165,7 @@ struct ContentView: View {
             }
             .ignoresSafeArea()
             .gesture(
+                //gestos para jugadores
                 DragGesture(minimumDistance: 0)
                     .onChanged { value in
 
@@ -220,7 +221,7 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 .shadow(color: .cyan, radius: 14)
 
-            Button("JUGAR CONTRA IA") {
+            Button("JUGAR CONTRA CPU") {
                 startGame(screen: .solo)
             }
             .padding()
@@ -264,7 +265,7 @@ struct ContentView: View {
         }
     }
     
-    // area de juego (modo contra IA)
+    // area de juego (modo contra CPU)
     var soloOverlay: some View {
 
         ZStack {
